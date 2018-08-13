@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimSituations"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="396" Width="600" MinHeight="360" MinWidth="600"
+        Closing="ApplicationClosing">
     <Grid>
-        
+        <Label Margin="0,32,0,0" Content="David Wheatley's Flight Sim Situations" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TabControl Margin="10,63,10,10">
+            <TabItem Header="Dashboard">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Situation List">
+                <Grid Background="#FFE5E5E5">
+                    <TreeView x:Name="situationlistTreeView" Margin="10">
+                    </TreeView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal" VerticalAlignment="Top" Height="27" HorizontalAlignment="Left" Margin="1,2,0,0">
+            <Button x:Name="saveSituationConfigButton" Content="Save Config" Margin="5,0,5,0" Padding="5,0,5,0" Height="27" VerticalAlignment="Center" Click="saveSituationConfigButton_Click" />
+            <Button x:Name="loadSituationsConfigButton" Content="Load Config" Margin="5,0,5,0" Padding="5,0,5,0" Height="27" VerticalAlignment="Center" Click="loadSituationConfigButton_Click" />
+            <Button x:Name="enableAllSituationsButton" Content="Enable ALL" Margin="5,0,5,0" Padding="5,0,5,0" Height="27" VerticalAlignment="Center" Click="enableAllSituationsButton_Click" />
+            <Button x:Name="disableAllSituationsButton" Content="Disable ALL" Margin="5,0,5,0" Padding="5,0,5,0" Height="27" VerticalAlignment="Center" Click="disableAllSituationsButton_Click" />
+        </StackPanel>
     </Grid>
 </Window>
